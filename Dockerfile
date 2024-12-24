@@ -1,9 +1,11 @@
-FROM python:3.10
+FROM python:3.9-slim
 
 WORKDIR /app
+
 COPY . /app
 
-RUN pip3 install flask
+RUN pip install flask pymongo
+
 EXPOSE 5000
 
-CMD ["python3", "app.py"]
+CMD ["python", "app.py"]
